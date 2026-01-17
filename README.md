@@ -7,3 +7,20 @@ Leveraging machine learning (ML) techniques to predict endometriosis based on cl
 
 # Dataset description
 
+
+
+
+```
+curl -X 'POST' \
+  'http://localhost:9696/predict' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "menstrual_irregularity": 1,
+  "chronic_pain_level": 3.43688,
+  "hormone_level_abnormality": 1,
+  "infertility": 0,
+  "bmi": 27.237861,
+  "physical_activity": "rarely"
+}'
+```
