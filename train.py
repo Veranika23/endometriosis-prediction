@@ -33,8 +33,22 @@ df_full_train, df_test = train_test_split(df, test_size=0.2, random_state=1)
 
 df_full_train = df_full_train.reset_index(drop=True)
 
-y_full_train = df_full_train.attrition.values
+y_full_train = df_full_train.diagnosis.values
 
-del df_full_train['attrition']
+del df_full_train['diagnosis']
+
+full_train_dicts = df_full_train.to_dict(orient='records')
+
+pipeline = make_pipeline(DictVectorizer(), RandomForestClassifier(n_estimators=80,
+                            max_depth=10,
+                            min_samples_leaf=50,
+                            random_state=1))
 
 
+
+pipeline.fit(full_train_dicts, y_full_train)
+
+with open('model.bin', 'wb') as f_out: 
+    pickle.dump(pipeline, f_out)
+
+print('\n The model saved successfully')
