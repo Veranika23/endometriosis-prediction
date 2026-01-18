@@ -3,6 +3,7 @@ import uvicorn
 import requests
 
 from fastapi import FastAPI
+#from fastapi import Body
 from typing import Dict, Any
 
 model_file = 'model.bin'

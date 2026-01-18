@@ -6,9 +6,11 @@ Endometriosis is a chronic gynecological condition characterized by the growth o
 Leveraging machine learning (ML) techniques to predict endometriosis based on clinical and demographic data offers the potential to enhance diagnostic accuracy, minimize invasive procedures, and support personalized treatment strategies.
 
 # Dataset description
-
-
-
+The dataset used is taken from Kaggle 
+ ```
+ https://www.kaggle.com/datasets/michaelanietie/endometriosis-dataset?resource=download
+ ````
+It is structured to reflect common features and symptoms associated with the condition, making it suitable for training machine learning models. I have additionally created a text variable physical_activity in order to practise mutual information
 
 ```
 curl -X 'POST' \
