@@ -32,6 +32,19 @@ Exploratory analysis revealed no outliers and no nulls. The target variable is b
 
 # Model Training
 
+The following models were used to train the model with the ROC_AUC scores on the test data:
+
+| Model                   | ROC_AUC |
+|-------------------------|---------|
+| LogisticRegression      | 0.644   |
+| DecisionTreeClassifier  | 0.642   |
+| RandomForestClassifier  | 0.656   |
+| XGBoost                 | 0.653   |
+
+
+The hyperparameters in the models were tuned to achieve the highest ROC_AUC score. As a result Random Forest with max depth of 10 and min samples leaf of 50 is chosen to train the final model.
+
+
 
 ```
 curl -X 'POST' \
