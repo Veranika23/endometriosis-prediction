@@ -10,7 +10,28 @@ The dataset used is taken from Kaggle
  ```
  https://www.kaggle.com/datasets/michaelanietie/endometriosis-dataset?resource=download
  ````
-It is structured to reflect common features and symptoms associated with the condition, making it suitable for training machine learning models. I have additionally created a text variable physical_activity in order to practise mutual information
+It is structured to reflect common features and symptoms associated with the condition, making it suitable for training machine learning models. I have additionally created a text variable physical_activity in order to practise mutual information and DictVectorizer.
+
+# EDA Summary
+
+After exploratory analysis and checking the correlation "age" variable has been deleted as it has no correlation with the target variable - endometriosis diagnosis.
+
+![alt text](image-4.png)
+
+Mutual information showed that physical activity can explain the target variable rather minimally.
+
+![alt text](image-5.png)
+
+Exploratory analysis revealed no outliers and no nulls. The target variable is balanced.
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
+# Model Training
+
 
 ```
 curl -X 'POST' \
