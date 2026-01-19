@@ -46,6 +46,12 @@ The hyperparameters in the models were tuned to achieve the highest ROC_AUC scor
 
 # Deployment
 
+To install all the dependencies, run:
+
+```
+uv sync
+```
+
 To run the model locally, execute the following code in the terminal:
 
 ```
@@ -71,4 +77,45 @@ curl -X 'POST' \
 
 # Docker
 
-To run a containerized app 
+To run a containerized app
+
+```
+docker build -t attrition-prediction .
+docker run -it --rm -p 9696:9696 attrition-prediction
+```
+
+And similarly test the Webservice either by going to http://localhost:9696/docs or executing the following curl command:
+
+```
+curl -X 'POST' \
+  'http://localhost:9696/predict' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "menstrual_irregularity": 1,
+  "chronic_pain_level": 3.43688,
+  "hormone_level_abnormality": 1,
+  "infertility": 0,
+  "bmi": 27.237861,
+  "physical_activity": "rarely"
+}'
+```
+
+# Cloud deployment
+
+The app was deployed on Render. 
+
+To test run the following curl command on https://endometriosis-prediction.onrender.com/docs:
+
+```
+curl -X 'POST' \
+  'https://endometriosis-prediction.onrender.com/predict' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{  "menstrual_irregularity": 1,
+  "chronic_pain_level": 3.43688,
+  "hormone_level_abnormality": 1,
+  "infertility": 0,
+  "bmi": 27.237861,
+  "physical_activity": "rarely"}'
+  ```
