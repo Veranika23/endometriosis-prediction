@@ -44,7 +44,15 @@ The following models were used to train the model with the ROC_AUC scores on the
 
 The hyperparameters in the models were tuned to achieve the highest ROC_AUC score. As a result Random Forest with max depth of 10 and min samples leaf of 50 is chosen to train the final model.
 
+# Deployment
 
+To run the model locally, execute the following code in the terminal:
+
+```
+uv run python predict.py
+```
+
+You can then test the Webservice either by going to http://localhost:9696/docs or executing the following curl command:
 
 ```
 curl -X 'POST' \
@@ -60,3 +68,7 @@ curl -X 'POST' \
   "physical_activity": "rarely"
 }'
 ```
+
+# Docker
+
+To run a containerized app 
